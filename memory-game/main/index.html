@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css" rel="stylesheet"/>
+        <title>MemoryGame</title>
+    </head>
+    <body>
+        <span class="timer"><ion-icon name="time-outline" class="timer icon"></ion-icon>1h30m</span>
+        <div class="tri-state-toggle">
+            <input type="radio" id="one" data-max="4"></input>
+            <input type="radio" id="two" data-max="6"></input>
+            <input type="radio" id="three" data-max="10"></input>
+        </div>
+        <section class="cards" id="game">
+            <div class="card-base" data-tipocarta="" style="display: none;">
+                <img src="../img/CSharp.svg" class="front-card"/>
+                <img src="../img/CronoTec.jpeg" class="back-card"/>
+            </div>
+        </section>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" defer src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

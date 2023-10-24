@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="login.css">
+
+        <title>START!</title>
+    </head>
+    <body>
+        <form class="abc">
+            <div class="start">         
+                <img src="brain.png" alt="brain">
+                <h1>Jogo da Memória</h1>
+            </div>
+            <label for="nome_input" class="">Digite seu nome:</label><input required placeholder="Nome" class="nome_input"/>
+            <br>
+            <button type="submit" class="botaoStart" id="botao">JOGAR</button>
+        </form>
+    </body>
+    <script>
+        let button = document.getElementById('botao');
+
+        function changePage() {
+            location.href = "../memory-game/main/index.html";
+        }
+
+        button.addEventListener('click', changePage);
+    </script>
+</html>
