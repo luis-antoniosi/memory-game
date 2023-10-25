@@ -14,16 +14,23 @@
                 <img src="brain.png" alt="brain">
                 <h1>Jogo da Memória</h1>
             </div>
-            <label for="nome_input" class="">Digite seu nome:</label><input required placeholder="Nome" class="nome_input"/>
+            <label for="nome_input" class="">Digite seu nome:
+            <input type="text" placeholder="Nome..." id="nomejogador" class="nome_input" required/>
+        </label>
             <br>
-            <button type="submit" class="botaoStart" id="botao">JOGAR</button>
+        <button type="button" class="botaoStart" id="botao">JOGAR</button>
         </form>
     </body>
     <script>
         let button = document.getElementById('botao');
 
         function changePage() {
+            let nomejogador = document.getElementById('nomejogador');
+            localStorage.setItem('jogador', nomejogador.value);            
+
             location.href = "../memory-game/main/index.html";
+
+            console.log(location.href);
         }
 
         button.addEventListener('click', changePage);

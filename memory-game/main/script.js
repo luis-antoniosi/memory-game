@@ -5,7 +5,7 @@ let game = document.getElementById('game'); // section que possui todos os cards
 let primeiraCarta, segundaCarta;
 let cartaVirada, trancarTabuleiro = false;
 let height, width;
-let correctGuesses = 0;
+let cartasCertas = 0;
 let difficulty;
 
 (function startGame() {
@@ -27,12 +27,13 @@ let difficulty;
             });
         });
     });
-    createBoard(4);
+    buttons[0].click();
+    createBoard(difficulty);
 })()
 
 // criar tabuleiro
 function createBoard(difficulty) {
-    console.log(difficulty);
+    cartasCertas = 0;
     clearBoard(); //limpa o tabuleiro antes da criação de outro
     prepare(difficulty);
 
@@ -118,7 +119,8 @@ function isMatch() {
     if (primeiraCarta.dataset.tipocarta === segundaCarta.dataset.tipocarta) { // se o "data-*" das duas cartas acima forem iguais, ou seja, as cartas são iguais e possuem a mesma imagem
         primeiraCarta.removeEventListener('click', flipCard); //remove os eventListener de cada, para que não possam mais ser viradas
         segundaCarta.removeEventListener('click', flipCard);
-        correctGuesses++;
+        cartasCertas++;
+        console.log(cartasCertas);
         winOrLose();
         resetCards();
     }
@@ -133,11 +135,12 @@ function isMatch() {
     
 function winOrLose() {
     console.log(difficulty);
-    if (correctGuesses == difficulty) {
+    let nomeJogador = localStorage.getItem('jogador');
+    if (cartasCertas == difficulty) {
         Swal.fire({
             icon: 'success',
             title: 'Good job!',
-            text: 'you won the game!',
+            text: nomeJogador + ' won the game!',
             backdrop: false
         });
     }
