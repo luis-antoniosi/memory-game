@@ -87,6 +87,7 @@ input:hover {
     justify-content: center;
     border: 3px solid black;
     border-radius: 50px;
+    margin-top: 5%;
 }
 
 #one {
@@ -100,4 +101,27 @@ input:hover {
 
 #three {
     background-color: red;
+}
+
+.novojogo {
+    background-color: green;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    width: 100px;
+    height: 35px;
+    border: 3px solid transparent;
+    border-radius: 9px;
+    margin-bottom: 5%;
+}
+
+.novojogo:hover {
+    cursor: pointer;
+    background-color: green;
+    transition: all linear .1s;
+}
+
+.novojogo:active {
+    color: black;
+    transform: translateY(1px);
 }

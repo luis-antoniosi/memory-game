@@ -37,7 +37,7 @@ const images = [
     },
     {
         card: "Github",
-        image: "../img/Github-2.png"
+        image: "../img/Github.png"
     },
     {
         card: "Dotnet",
@@ -61,7 +61,7 @@ const images = [
     },
     {
         card: "Firefox",
-        image: "../img/firefox-original.svg",
+        image: "../img/firefox.svg",
     },
     {
         card: "C",
@@ -77,7 +77,15 @@ const images = [
     },
     {
         card: "Linux",
-        image: "../img/nuget.svg",
+        image: "../img/linux.svg",
+    },
+    {
+        card: "HTML",
+        image: "../img/html.svg"
+    },
+    {
+        card: "CSS",
+        image: "../img/css.svg"
     }
 ]
 

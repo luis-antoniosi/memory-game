@@ -2,7 +2,7 @@ body{
    background-image: linear-gradient(to top, #90EE90, #FFC0CB);
 }
 
-.abc{
+.login{
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -42,13 +42,6 @@ width: 250px;
     font-family: Pixelify;
 }
 
-.botaoStart:disabled{
-    background-color: #C0C0C0;
-    border: 2px solid #808080;
-    color: #A9A9A9;
-    cursor: auto;
-}
-
 @font-face {
     font-family: Pixelify;
     src: url(../assets/PixelifySans-VariableFont_wght.ttf);
@@ -69,12 +62,9 @@ width: 250px;
     border-radius: 5px;
     align-items: center;
     justify-content: center;
-    
-}
-
-.nome_input::placeholder{
     font-family: Pixelify;
     font-size: 18px;
+    
 }
 
 label{

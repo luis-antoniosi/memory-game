@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+    </body>
+    <script>
+        let element = document.createElement('a');
+        let data = Object.keys(localStorage);
+        let simpleData = [];
+        data.forEach(element => { 
+            simpleData.push(localStorage.getItem(element)); 
+            
+        });
+        function fixArray(data) {
+            let array = data.join("\n");
+            return array;
+        }
+         
+        function download(filename, text) {
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', filename);
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+        }
+
+        // Start file download.
+        download("data.txt", fixArray(simpleData));
+    </script>
+    <!--Código extra para baixar um arquivo .txt com todos os usuários criados ao decorrer dos jogos-->
+</html>

@@ -9,30 +9,41 @@
         <title>START!</title>
     </head>
     <body>
-        <form class="abc">
-            <div class="start">         
-                <img src="brain.png" alt="brain">
-                <h1>Jogo da Memória</h1>
-            </div>
-            <label for="nome_input" class="">Digite seu nome:
-            <input type="text" placeholder="Nome..." id="nomejogador" class="nome_input" required/>
-        </label>
-            <br>
-        <button type="button" class="botaoStart" id="botao">JOGAR</button>
-        </form>
+        <div class="login">
+                <div class="start">         
+                    <img src="brain.png" alt="brain">
+                    <h1>Jogo da Memória</h1>
+                </div>
+                <input type="text" placeholder="Digite seu nome!" id="nomejogador" class="nome_input"/>
+                <br>
+            <button type="button" class="botaoStart" id="botao">JOGAR</button>
+        </div>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        let button = document.getElementById('botao');
+        let inputButton = document.getElementById('botao');
 
-        function changePage() {
-            let nomejogador = document.getElementById('nomejogador');
-            localStorage.setItem('jogador', nomejogador.value);            
+        function saveName(e) {
+            let input = document.getElementById('nomejogador');
+            if (input.value == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Atenção!',
+                    text: 'É preciso preencher o seu nome.',
+                    backdrop: false
+                });
+                return;
+            }
+            
+            sessionStorage.setItem('jogador', input.value);            
 
-            location.href = "../memory-game/main/index.html";
-
-            console.log(location.href);
+            changePage();
         }
 
-        button.addEventListener('click', changePage);
+        function changePage() {
+            location.href = "../memory-game/main/index.html";
+        }
+
+        inputButton.addEventListener('click', saveName);
     </script>
 </html>
